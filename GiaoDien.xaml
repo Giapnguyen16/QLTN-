@@ -1,0 +1,66 @@
+﻿<Window x:Class="Quan_ly_tai_nguyen_rung.GiaoDien"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Quan_ly_tai_nguyen_rung"
+        mc:Ignorable="d"
+        Title="GiaoDien" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <!-- Sidebar width -->
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Tiêu đề sidebar -->
+        <Border Background="#4C8F62" Grid.Row="0" Grid.Column="0">
+            <TextBlock Text="Quản Lý Tài Nguyên Rừng" 
+               Foreground="White" 
+               FontSize="16" 
+               VerticalAlignment="Center" 
+               HorizontalAlignment="Center"/>
+        </Border>
+
+        <!-- Tiêu đề chính -->
+        <Border Grid.Row="0" Grid.Column="1" Background="#B1C97F" />
+
+        <!-- Sidebar với các nút điều hướng -->
+        <Border Background="#A5AE92" Grid.Row="1" Grid.Column="0">
+            <StackPanel>
+                <TextBlock Text="Quản lý hệ thống" 
+                   FontSize="18" 
+                   Foreground="White" 
+                   Margin="10"
+                   HorizontalAlignment="Center"/>
+                <Button Content="Quản lý người dùng" Name="btnQuanLyNguoiDung" Margin="10" Height="30" Click="btnQuanLyNguoiDung_Click"/>
+                <Button Content="Phân quyền người dùng" Name="btnPhanQuyenNguoiDung" Margin="10" Height="30" Click="btnPhanQuyenNguoiDung_Click"/>
+
+                <TextBlock Text="Quản lý cơ sở sản xuất" 
+                   FontSize="18" 
+                   Foreground="White" 
+                   Margin="10"
+                   HorizontalAlignment="Center"/>
+                <Button Content="Cơ sở sản xuất cây giống" Name="btnCoSoSanXuatCayGiong" Margin="10" Height="30" Click="btnCoSoSanXuatCayGiong_Click"/>
+                <Button Content="Cơ sở sản xuất chế biến gỗ" Name="btnCoSoSanXuatCheBienGo" Margin="10" Height="30" Click="btnCoSoSanXuatCheBienGo_Click"/>
+
+                <TextBlock Text="Quản lý tài nguyên rừng" 
+                   FontSize="18" 
+                   Foreground="White" 
+                   Margin="10"
+                   HorizontalAlignment="Center"/>
+                <Button Content="Danh mục loài động vật" Name="btnDanhMucDongVat" Margin="10" Height="30" Click="btnDanhMucDongVat_Click"/>
+                <Button Content="Biến động số lượng cá thể" Name="btnBienDongSoLuong" Margin="10" Height="30" Click="btnBienDongSoLuong_Click"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Khu vực hiển thị nội dung chính -->
+        <Border Grid.Row="1" Grid.Column="1" Background="White">
+            <Frame Name="MainContentFrame" NavigationUIVisibility="Hidden"/>
+        </Border>
+    </Grid>
+</Window>
